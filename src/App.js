@@ -11,10 +11,10 @@ function App() {
     });
   }
   return (
-    <Wrapper>
+    <>
       <AddUser onAddUser={addUSerHandler}></AddUser>
       <UsersList users={usersList}></UsersList>
-    </Wrapper>
+    </>
   );
 }
 

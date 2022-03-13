@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Wrapper from "./components/helpers/Wrapper";
 import AddUser from "./components/Users/AddUser";
 import UsersList from "./components/Users/UsersList";
 
@@ -10,10 +11,10 @@ function App() {
     });
   }
   return (
-    <div>
+    <Wrapper>
       <AddUser onAddUser={addUSerHandler}></AddUser>
       <UsersList users={usersList}></UsersList>
-    </div>
+    </Wrapper>
   );
 }
 

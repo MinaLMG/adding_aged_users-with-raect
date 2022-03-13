@@ -40,35 +40,34 @@ function AddUser(props) {
   function errorHandler() {
     setError(undefined);
   }
-  return (
-    <div>
-      {error && (
-        <ErrorModal
-          title={error.title}
-          message={error.message}
-          onConfirm={errorHandler}
-        ></ErrorModal>
-      )}
-      <Card class="input">
-        <form onSubmit={addUserHandler}>
-          <label htmlFor="username">user name</label>
-          <input
-            type="text"
-            id="username"
-            onChange={userNameChangeHandler}
-            value={enteredUserName}
-          ></input>
-          <label htmlFor="age">user age</label>
-          <input
-            type="number"
-            id="age"
-            onChange={userAgeChangeHandler}
-            value={enteredUserAge}
-          ></input>
-          <Button type="submit">Add User</Button>
-        </form>
-      </Card>
-    </div>
-  );
+  return [
+    error && (
+      <ErrorModal
+        key="error-modal"
+        title={error.title}
+        message={error.message}
+        onConfirm={errorHandler}
+      ></ErrorModal>
+    ),
+    <Card key="add-user-card" class="input">
+      <form onSubmit={addUserHandler}>
+        <label htmlFor="username">user name</label>
+        <input
+          type="text"
+          id="username"
+          onChange={userNameChangeHandler}
+          value={enteredUserName}
+        ></input>
+        <label htmlFor="age">user age</label>
+        <input
+          type="number"
+          id="age"
+          onChange={userAgeChangeHandler}
+          value={enteredUserAge}
+        ></input>
+        <Button type="submit">Add User</Button>
+      </form>
+    </Card>,
+  ];
 }
 export default AddUser;
